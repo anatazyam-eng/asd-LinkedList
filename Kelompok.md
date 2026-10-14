@@ -1,5 +1,5 @@
 # Proyek 1 ASD
 Kelas : 
-1. Nama Mhs 1, NIM Mhs 1
-2. Nama Mhs 2, NIM Mhs 2
-2. Nama Mhs 3, NIM Mhs 3
+1. Anatazya Michella Br Purba Siboro, 255150207111077
+2. Nazhifah Faradila Mokodompit, 255150207111078
+2. Naila Sakha Nabila Akbar, 255150207111082

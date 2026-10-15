@@ -116,11 +116,24 @@ public class SinglyLinkedList implements LinkedList{
     }
     @Override
     public Object get(int index) {
-        // TODO digunakan untuk mengembalikan data pada index ke-i dimulai dari head. Head memiliki index 0
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        Node currentNode = head;
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.pointer;
+        }
         return null;
     }
     @Override
     public int indexOf(Object targetData) {
+        Node current = head;
+        for (int i = 0; i < size; i++){
+            if (Objects.equals(current.data, targetData)) {
+                return i;
+            }
+            return -1;
+        }
         // TODO digunakan mencari kemunculan pertama targetData pada linked list dan mengembalikan indeksnya. Indeks dari head adalah 0. Jika tidak ada targetData pada linked list, kembalikan nilai -1 
         return 0;
     }

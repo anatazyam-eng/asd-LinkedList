@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class DoublyLinkedList implements LinkedList{
     private Node2P head,tail;
     int size=0;
@@ -138,11 +140,37 @@ public class DoublyLinkedList implements LinkedList{
     @Override
     public boolean remove(Object targetData) {
         // TODO digunakan untuk mencari dan menghapus node dengan data=targetData pada linked list serta mengembalikan nilai True jika berhasil, dan False jika targetData tidak ada di linkedList
+        Node2P current = head;
+        while(current != null){
+            if(Objects.equals(current.data, targetData)){
+                if(current == head){
+                    this.deleteFirst();
+                }
+                else if(current == tail){
+                    this.deleteLast();
+                }
+                else{
+                    current.prev.next = current.next;
+                    current.next.prev = current.prev;
+                    size--;
+                }
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
     @Override
     public Object[] toArray() {
         // TODO digunakan untuk mendapatkan keseluruhan data pada node-node di linked list dalam bentuk array. Data-data pada array disusun secara urut mulai dari head sampai dengan tail.
-        return null;
+        Object[] array = new Object[size];
+        Node2P current = head;
+        int i = 0;
+        while(current != null){
+            array[i] = current.data;
+            current = current.next;
+            i++;
+        }
+        return array;
     }
 }
